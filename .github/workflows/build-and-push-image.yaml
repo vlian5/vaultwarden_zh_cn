@@ -32,4 +32,3 @@ jobs:
         tags: |
           ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/vaultwarden:latest
           ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/vaultwarden:1.34.1
-          ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/vaultwarden:${{ github.sha }}
