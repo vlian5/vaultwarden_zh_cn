@@ -2,7 +2,10 @@ name: Build and Push Docker Image
 
 on:
   push:
-    branches: [ main ] # 当main分支有推送时触发
+    branches: 
+      - main  # 指定触发的分支
+    paths:
+      - '.github/workflows/**'  # 监听 .github/workflows 目录下的文件变化
 
 jobs:
   build-and-push:
@@ -26,6 +29,4 @@ jobs:
         context: . # 构建上下文为当前目录
         file: Dockerfile # 指定Dockerfile路径
         push: true # 推送镜像
-        tags: |
-          ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/vaultwarden:${{ github.sha }}
-          ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/vaultwarden:${{ github.tag }}
+        tags:  ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/vaultwarden:1.34.1
