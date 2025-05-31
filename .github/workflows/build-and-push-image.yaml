@@ -26,5 +26,7 @@ jobs:
         context: . # 构建上下文为当前目录
         file: Dockerfile # 指定Dockerfile路径
         push: true # 推送镜像
-        tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/vaultwarden:${{ github.sha }} # 镜像标签，使用commit SHA
-        tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/vaultwarden:${{ github.ref_name }} # 镜像标签，使用commit SHA
+        tags: |
+          ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/vaultwarden:${{ github.sha }} # 镜像标签，使用commit SHA
+          ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/vaultwarden:${{ github.ref_name }} # 镜像标签，使用commit SHA
+          ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/vaultwarden:${{ github.tag }} # 镜像标签，使用commit SHA
