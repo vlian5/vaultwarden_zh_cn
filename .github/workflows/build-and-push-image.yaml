@@ -28,4 +28,3 @@ jobs:
         push: true # 推送镜像
         tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/vaultwarden:${{ github.sha }} # 镜像标签，使用commit SHA
         tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/vaultwarden:${{ github.ref_name }} # 镜像标签，使用commit SHA
-        tags: ${{ secrets.ALIYUN_REGISTRY }}/${{ secrets.ALIYUN_NAME_SPACE }}/vaultwarden:${{ github.tag }} # 镜像标签，使用commit SHA
