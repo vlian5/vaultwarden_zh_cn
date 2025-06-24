@@ -143,7 +143,7 @@ RUN mkdir /data && \
         tzdata
 
 VOLUME /data
-EXPOSE 80
+EXPOSE 30002
 
 # Copies the files from the context (Rocket.toml file and web-vault)
 # and the binary from the "build" stage to the current stage
